@@ -228,21 +228,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnExplosion(to: player.position)
                 spawnExplosion(to: enemy.position)
                 
-                contact.bodyA.node?.removeFromParent()
-                contact.bodyB.node?.removeFromParent()
+                player.removeFromParent()
+                enemy.removeFromParent()
                 gameOver()
             }
         }
         if contact.bodyA.categoryBitMask == PhysicsCategories.bullet && contact.bodyB.categoryBitMask == PhysicsCategories.enemy {
             //if bullet hit enemy
-            if let enemy = contact.bodyB.node as? SKSpriteNode {
+            if let bullet = contact.bodyA.node as? SKSpriteNode, let enemy = contact.bodyB.node as? SKSpriteNode {
                 if enemy.position.y < self.size.height {
                     
                     addScore()
                     spawnExplosion(to: enemy.position)
                     
-                    contact.bodyA.node?.removeFromParent()
-                    contact.bodyB.node?.removeFromParent()
+                    bullet.removeFromParent()
+                    enemy.removeFromParent()
                 }
             }
         }
