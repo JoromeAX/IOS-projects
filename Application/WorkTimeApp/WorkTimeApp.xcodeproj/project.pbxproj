@@ -13,6 +13,7 @@
 		FB10D1222A717E7800A472F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10D1212A717E7800A472F5 /* ViewController.swift */; };
 		FB10D1272A717E7900A472F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB10D1262A717E7900A472F5 /* Assets.xcassets */; };
 		FB10D12A2A717E7900A472F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB10D1282A717E7900A472F5 /* LaunchScreen.storyboard */; };
+		FB7A95FC2A73B70A0096595F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7A95FB2A73B70A0096595F /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FB10D1262A717E7900A472F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB10D1292A717E7900A472F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB10D12B2A717E7900A472F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB7A95FB2A73B70A0096595F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,6 @@
 				DC06FCE0EC73A56289E2169D /* Pods-WorkTimeApp.debug.xcconfig */,
 				159723CCC64E12E715FE195D /* Pods-WorkTimeApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,6 +80,7 @@
 		FB10D11C2A717E7800A472F5 /* WorkTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB7A95F92A73B6430096595F /* Resoures */,
 				FB10D1322A717EDB00A472F5 /* Application */,
 				FB10D1312A717EC300A472F5 /* SupportingFiles */,
 				FB10D1212A717E7800A472F5 /* ViewController.swift */,
@@ -105,6 +107,22 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		FB7A95F92A73B6430096595F /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				FB7A95FA2A73B6C90096595F /* Generatet */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
+		FB7A95FA2A73B6C90096595F /* Generatet */ = {
+			isa = PBXGroup;
+			children = (
+				FB7A95FB2A73B70A0096595F /* R.generated.swift */,
+			);
+			path = Generatet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +135,7 @@
 				FB10D1172A717E7800A472F5 /* Frameworks */,
 				FB10D1182A717E7800A472F5 /* Resources */,
 				27E291C1A343B538792BC4D6 /* [CP] Embed Pods Frameworks */,
+				FB7A95F82A73B60B0096595F /* R Generate */,
 			);
 			buildRules = (
 			);
@@ -212,6 +231,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkTimeApp/Pods-WorkTimeApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FB7A95F82A73B60B0096595F /* R Generate */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R Generate";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/WorkTimeApp/Resoures/Generatet/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -222,6 +260,7 @@
 				FB10D1222A717E7800A472F5 /* ViewController.swift in Sources */,
 				FB10D11E2A717E7800A472F5 /* AppDelegate.swift in Sources */,
 				FB10D1202A717E7800A472F5 /* SceneDelegate.swift in Sources */,
+				FB7A95FC2A73B70A0096595F /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
